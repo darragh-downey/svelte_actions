@@ -1,0 +1,21 @@
+name: Node Continuous Integration
+
+on:
+  pull_request:
+      branches: [ main ]
+
+  
+  jobs:
+    test_pull_request:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: borales/actions-yarn@v2.3.0
+          with:
+            cmd: install # will run `yarn install` cmd
+        - uses: borales/actions-yarn@v2.3.0
+          with:
+            cmd: build   # will run `yarn build` cmd
+        - uses: borales/actions-yarn@v2.3.0
+          with:
+            cmd: test    # will run `yarn test` cmd
