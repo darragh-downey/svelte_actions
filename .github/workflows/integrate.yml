@@ -1,9 +1,6 @@
 name: Node Continuous Integration
 
-on:
-  pull_request:
-      branches: [ main ]
-
+on: [push]
   
 jobs:
   test_pull_request:
