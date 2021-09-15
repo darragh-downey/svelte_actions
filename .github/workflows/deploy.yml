@@ -18,3 +18,5 @@ jobs:
       - uses: w9jds/firebase-action@master # looking for FIREBASE_TOKEN
         with:
           args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
